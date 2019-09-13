@@ -261,7 +261,7 @@ metadata:
 ## Consul to Kubernetes
 
 This syncs Consul services into first-class Kubernetes services.
-An [ExternalName](https://kubernetes.io/docs/concepts/services-networking/service/#externalname)
+An [`ExternalName`](https://kubernetes.io/docs/concepts/services-networking/service/#externalname)
 `Service` is created for each Consul service. The "external name" will be
 the Consul DNS name.
 
@@ -280,13 +280,13 @@ spec:
 ```
 
 With Consul To Kubernetes syncing enabled, DNS requests of the form `{consul-service-name}`
-will be serviced by Consul DNS. From a different namespace than where Consul
+will be serviced by Consul DNS. From a different Kubernetes namespace than where Consul
 is deployed, the DNS request would need to be `{consul-service-name}.{consul-namespace}`.
 
 -> **Note:** Consul to Kubernetes syncing **isn't required** if you've enabled [Consul DNS on Kubernetes](/docs/platform/k8s/dns.html)
 *and* all you need to do is address services in the form `{consul-service-name}.service.consul`, i.e. you don't need Kubernetes `Service` objects created.
 
--> **Requires Consul DNS via CoreDNS in Kubernetes:** This feature requires that
+~> **Requires Consul DNS via CoreDNS in Kubernetes:** This feature requires that
 [Consul DNS](/docs/platform/k8s/dns.html) is configured within Kubernetes.
 Additionally, **[CoreDNS](https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/#config-coredns)
 is required (instead of kube-dns)** to resolve an

@@ -511,7 +511,7 @@ Licensed Features:
 
 ## Helm Chart Examples
 
-The below `values.yaml` can be used to set up a single server Consul cluster with a `LoadBalancer` to allow external access to the UI and API.
+The below `values.yaml` results in a single server Consul cluster with a `LoadBalancer` to allow external access to the UI and API.
 
 ```yaml
 global:
@@ -526,7 +526,7 @@ ui:
     type: LoadBalancer
 ```
 
-The below `values.yaml` can be used to set up a three server Consul Enterprise cluster with 100GB of storage and automatic Connect injection for annotated pods in the "my-app" namespace.
+The below `values.yaml` results in a three server Consul Enterprise cluster with 100GB of storage and automatic Connect injection for annotated pods in the "my-app" namespace.
 
 Note, this would require a secret that contains the enterprise license key.
 
